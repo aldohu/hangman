@@ -10,12 +10,10 @@
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	height: 100vh;
 	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 h1 {
 	font-size: 3rem;
@@ -26,7 +24,77 @@ h1 {
 #left-arm,
 #right-arm,
 #left-leg,
-#right-leg,
+#right-leg {
+	display: none;
+}
 .popup {
-	visibility: hidden;
+	display: none;
+}
+.popup.show {
+	display: block;
+}
+#word,
+#wrong-letters,
+.wrong-letters-container {
+	width: 200px;
+	height: 200px;
+}
+#word {
+	margin-top: 65px;
+}
+.game-container {
+	width: 100%;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	max-height: 500px;
+}
+main {
+	width: 60vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+svg {
+	display: block;
+}
+
+.svgContainer {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.letter {
+	display: inline-block;
+	margin: 0 2px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.show {
+	display: block;
+}
+.animate {
+	animation: revealAndMove 2s ease-in-out forwards;
+	animation-name: animate;
+}
+.notification-container {
+	position: absolute;
+	top: 100%;
+}
+
+@keyframes animate {
+	0% {
+		top: 99%;
+	}
+	50% {
+		top: 90%;
+	}
+	100% {
+		top: 100%;
+	}
 }
